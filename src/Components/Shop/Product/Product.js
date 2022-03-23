@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, Col } from "react-bootstrap";
+import { Button, Card, Col } from "react-bootstrap";
+import Rating from "react-rating";
 import "./Product.css";
 
 const Product = ({ product }) => {
@@ -10,13 +11,26 @@ const Product = ({ product }) => {
       <Col>
         <Card>
           <img src={img} alt="" className="img-fluid" />
-          <h5>{name.slice(0, 26)}</h5>
-          <h6>By: {seller}</h6>
-          <h5>Price: ${price}</h5>
-          <h6>
-            Only {stock} left in stock -{" "}
-            <span className="text-danger">order soon</span>
-          </h6>
+          <div className="p-3">
+            <h5>{name.slice(0, 20)}</h5>
+            <h6>By: {seller}</h6>
+            <h5>Price: ${price}</h5>
+            <div>
+              <Rating
+                className="main-color rating-style"
+                initialRating={ratings}
+                emptySymbol="fa fa-star-o fa-2x"
+                fullSymbol="fa fa-star fa-2x"
+                readonly
+              />
+              <span className="text-secondary">({ratingsCount} review)</span>
+            </div>
+            <h6 className="mt-2 mb-3">
+              Only {stock} left in stock -{" "}
+              <span className="text-danger">order soon</span>
+            </h6>
+            <Button className="btn-regular">Add To Cart </Button>
+          </div>
         </Card>
       </Col>
     </div>

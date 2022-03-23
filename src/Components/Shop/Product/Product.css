@@ -1,0 +1,12 @@
+.main-color {
+      color: goldenrod
+}
+
+.rating-style {
+      font-size: .6rem;
+}
+
+.btn-regular {
+      background: goldenrod;
+      border: 0;
+}
