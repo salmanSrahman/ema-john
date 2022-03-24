@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
 import Rating from "react-rating";
 import "./Product.css";
+import { HiShoppingCart } from "react-icons/hi";
 
 const Product = ({ product, handleAddToCart }) => {
   const { img, name, price, seller, ratings, ratingsCount, stock } = product;
@@ -34,7 +35,7 @@ const Product = ({ product, handleAddToCart }) => {
                 variant="warning text-dark"
                 onClick={() => handleAddToCart(product)}
               >
-                Add To Cart
+                Add To Cart <HiShoppingCart className="fs-5 fw-bold mb-1" />
               </Button>
             </div>
           </div>
